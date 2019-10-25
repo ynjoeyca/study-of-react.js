@@ -7,6 +7,7 @@ class AppComponent extends React.Component {
   }
 
   render() {
+    console.log("RENDERING");
     const { count, title } = this.state;
 
     return (
@@ -23,12 +24,12 @@ class AppComponent extends React.Component {
   }
 
   increment() {
-    console.log(this);
-    console.log("INC");
+    const { count } = this.state;
+    this.setState({ count: count + 1, title: "INC", blegh: 10 });
   }
-
   decrement() {
-    console.log("DEC");
+    const { count } = this.state;
+    this.setState({ count: count - 1, title: "DEC" });
   }
 }
 
